@@ -88,7 +88,7 @@ struct WalletView: View {
                     Image("BNC")
                     Text("Binance Smart Chain")
                     Spacer()
-                    Text("0 BNB")
+                    Text("13 BNB")
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
