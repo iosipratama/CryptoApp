@@ -27,7 +27,7 @@ struct WalletView: View {
                             HStack{
                                 Image(systemName: "arrow.up")
                                     .foregroundColor(.green)
-                                Text("4% Today")
+                                Text("4.2% Today")
                                     .foregroundColor(.green)
                             }
                             
