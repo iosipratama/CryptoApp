@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct WalletView: View {
+    
+    @State var balanceList:[CryptoBalance] = [CryptoBalance]()
+    var dataService = DataService()
+    
+   
+    
+    
     var body: some View {
-        
-        @State var balanceList:[CryptoBalance] = DataService().getData()
-        // @State var balanceList:[CryptoBalance] = [CryptoBalance]()
-        
-        var dataService = DataService()
-        
-        
         
         VStack{
             // Top Area
@@ -85,6 +85,14 @@ struct WalletView: View {
                             .frame(width: 40, height: 40)
                         Text(balance.tokenName)
                         Spacer()
+                        
+                        VStack(alignment:.trailing) {
+                            // Convert double type to string
+                            Text(String(balance.tokenBalance) + " " + balance.tokenTicker)
+                                .font(.headline)
+                            Text("$" + " " + String(balance.fiatBalance))
+                        }
+                       
                        
                     }
                 }
@@ -103,9 +111,7 @@ struct WalletView: View {
             balanceList = dataService.getData()
         }
         
-        
     }
-    
     
        
 }
