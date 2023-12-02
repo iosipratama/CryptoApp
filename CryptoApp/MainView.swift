@@ -25,14 +25,8 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "person.fill")
                 }
-         
-               
         }
-        // Changing toolbar background
-        .toolbarBackground(.white, for: .tabBar)
-        .toolbarBackground(.visible, for: .tabBar)
-        .toolbarColorScheme(.light, for: .tabBar)
-       
+
         
     }
 }
