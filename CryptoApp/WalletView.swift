@@ -12,18 +12,31 @@ struct WalletView: View {
     @State var balanceList:[CryptoBalance] = [CryptoBalance]()
     var dataService = DataService()
     
-   
-    
     
     var body: some View {
+        
+        // Caculate the total account value
+        var totalFiatBalance:Double = balanceList.reduce(0.0) { (result, balance) in
+            return result + balance.fiatBalance
+        }
+        
+        // Show it in decimal + maximum 2 decimal
+        var formattedTotalFiatBalance: String {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            numberFormatter.maximumFractionDigits = 2
+            
+            return numberFormatter.string(from: NSNumber(value: totalFiatBalance)) ?? ""
+        }
+        
         
         VStack{
             // Top Area
             VStack{
                     VStack(){
-                        Text("Account Balance")
+                        Text("Account Value")
                             .padding(.bottom, 2)
-                        Text("$4.312")
+                        Text("$ " + formattedTotalFiatBalance)
                             .font(.largeTitle)
                             .bold()
                             .padding(.bottom, 2)
