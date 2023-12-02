@@ -10,20 +10,23 @@ import SwiftUI
 struct WalletView: View {
     var body: some View {
         
+        @State var balanceList:[CryptoBalance] = DataService().getData()
+        // @State var balanceList:[CryptoBalance] = [CryptoBalance]()
+        
+        var dataService = DataService()
+        
+        
+        
         VStack{
             // Top Area
-            VStack(alignment: .leading){
-                HStack{
-                    VStack(alignment: .leading){
-                        Text("Current Balance")
+            VStack{
+                    VStack(){
+                        Text("Account Balance")
                             .padding(.bottom, 2)
-                        Text("4.74 ETH")
+                        Text("$4.312")
                             .font(.largeTitle)
                             .bold()
                             .padding(.bottom, 2)
-                        HStack{
-                            Text("$3,142.43")
-                                
                             HStack{
                                 Image(systemName: "arrow.up")
                                     .foregroundColor(.green)
@@ -31,13 +34,11 @@ struct WalletView: View {
                                     .foregroundColor(.green)
                             }
                             
-                        }
+                        
                         .padding(.bottom, 10)
                         
                     }
-                    Spacer()
-                    Image("ETH2")
-                }
+                
                 
                 HStack{
                     Button {
@@ -71,46 +72,23 @@ struct WalletView: View {
             .background(.white)
             
             VStack{
-                Text("Your Asset")
-                    .bold()
-                    .padding(.vertical, 12)
-                Divider()
-                HStack{
-                    Image("ETH")
-                    Text("Ethereum")
-                    Spacer()
-                    Text("143.12 ETH")
+                // Text("Your Asset")
+                //    .bold()
+                //    .padding(.vertical, 12)
+                // Divider()
+                
+                
+                List(balanceList) { balance in
+                    HStack{
+                        Image(balance.tokenLogo)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                        Text(balance.tokenName)
+                        Spacer()
+                       
+                    }
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                Divider()
-                HStack{
-                    Image("BNC")
-                    Text("Binance Smart Chain")
-                    Spacer()
-                    Text("13 BNB")
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                Divider()
-                HStack{
-                    Image("DOT")
-                    Text("Polkadot")
-                    Spacer()
-                    Text("13 DOT")
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                Divider()
-                HStack{
-                    Image("NEAR")
-                    Text("NEAR Protocol")
-                    Spacer()
-                    Text("0 NEAR")
-                }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 8)
-                Divider()
+                
                 
                 
             } .background(.white)
@@ -120,7 +98,15 @@ struct WalletView: View {
         
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         
+        .onAppear{
+            // Call for the data
+            balanceList = dataService.getData()
+        }
+        
+        
     }
+    
+    
        
 }
 
