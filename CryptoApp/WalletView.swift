@@ -85,30 +85,42 @@ struct WalletView: View {
             .background(.white)
             
             VStack{
-                // Text("Your Asset")
-                //    .bold()
-                //    .padding(.vertical, 12)
-                // Divider()
+                Text("Your Asset")
+                    .bold()
+                    .padding(.vertical, 12)
+                Divider()
                 
-                
-                List(balanceList) { balance in
-                    HStack{
-                        Image(balance.tokenLogo)
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text(balance.tokenName)
-                        Spacer()
-                        
-                        VStack(alignment:.trailing) {
-                            // Convert double type to string
-                            Text(String(balance.tokenBalance) + " " + balance.tokenTicker)
-                                .font(.headline)
-                            Text("$" + " " + String(balance.fiatBalance))
+                ScrollView{
+                    
+                    // Showing list of the asset in ForEach
+                    ForEach(balanceList){ balance in
+                        HStack{
+                            Image(balance.tokenLogo)
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                            Text(balance.tokenName)
+                            Spacer()
+                            
+                            VStack(alignment:.trailing) {
+                                // Convert double type to string
+                                Text(String(balance.tokenBalance) + " " + balance.tokenTicker)
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                Text("$" + " " + String(balance.fiatBalance))
+                                    .foregroundStyle(.gray)
+                            }
+                           
                         }
-                       
-                       
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 8)
+                        
+                        
                     }
+                    
+                    
                 }
+                
+                
                 
                 
                 
