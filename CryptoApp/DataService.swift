@@ -22,9 +22,29 @@ struct DataService {
             CryptoBalance(id: UUID(), tokenName:"Cardano", tokenLogo: "ADA", tokenBalance: 0, fiatBalance: 0, tokenTicker: "ADA")
         
         ]
-            
         
+    }
+    
+    func getTransaction() -> [Transactions] {
+        return [
+            Transactions(id: UUID(), date: Date(), type: "Sent", token:"USDT", tokenAmount: 100, fiatAmount: 100),
+            Transactions(id: UUID(), date: Date(), type: "Received", token:"USDC", tokenAmount: 50, fiatAmount: 10),
+            Transactions(id: UUID(), date: Date(), type: "Received", token:"BTC", tokenAmount: 0.0042, fiatAmount: 10),
+            Transactions(id: UUID(), date: Date(), type: "Sent", token:"USD", tokenAmount: 254, fiatAmount: 254),
         
+        ]
+        
+    }
+    
+    func getNft() -> [NFT] {
+        
+        return [
+            NFT(id: UUID(), nftimage: "Paris", nftname: "Winter Paris"),
+            NFT(id: UUID(), nftimage: "Berlin", nftname: "Winter Berlin"),
+            NFT(id: UUID(), nftimage: "Tokyo", nftname: "Winter Tokyo"),
+            NFT(id: UUID(), nftimage: "SanFrancisco", nftname: "Winter SF"),
+            NFT(id: UUID(), nftimage: "London", nftname: "Winter London")
+        ]
     }
     
 }

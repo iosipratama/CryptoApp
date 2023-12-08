@@ -12,7 +12,7 @@ struct CryptoAppApp: App {
     var body: some Scene {
         WindowGroup {
             // MainView()
-            WalletView()
+            MainView()
         }
     }
 }

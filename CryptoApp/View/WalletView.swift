@@ -31,63 +31,98 @@ struct WalletView: View {
         
         
         VStack{
+            
+            // Title
+            HStack {
+                Text("Crypto")
+                    .font(.title)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                
+                Spacer()
+                
+                Image("boredape")
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                
+            }
+            
+            
             // Top Area
             VStack{
-                    VStack(){
-                        Text("Account Value")
-                            .padding(.bottom, 2)
-                        Text("$ " + formattedTotalFiatBalance)
-                            .font(.largeTitle)
-                            .bold()
-                            .padding(.bottom, 2)
-                            HStack{
-                                Image(systemName: "arrow.up")
-                                    .foregroundColor(.green)
-                                Text("4.2% Today")
-                                    .foregroundColor(.green)
-                            }
+                HStack {
+                    VStack(alignment:.leading){
+                            Text("Account Value")
+                                .padding(.bottom, 2)
+                        
+                        
+                        HStack(alignment:.firstTextBaseline) {
                             
-                        
-                        .padding(.bottom, 10)
-                        
+                            Text("$ " + formattedTotalFiatBalance)
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.bottom, 2)
+                                HStack{
+                                    Image(systemName: "arrow.up")
+                                        .foregroundColor(.green)
+                                    Text("4.2% Today")
+                                        .foregroundColor(.green)
+                                }
+                                
+                            .padding(.bottom, 10)
+                        }
                     }
+                    
+                    Spacer()
+                }
                 
                 
-                HStack{
+                HStack(){
                     Button {
                         
                     } label: {
-                        Text("Send")
+                        HStack{
+                            Image(systemName: "arrow.up")
+                                .fontWeight(.bold)
+                            Text("Send")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        }
+                        
                     }
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 24)
+                    .foregroundColor(Color("BrandPrimary"))
+                    .background(Color("BrandSecondary"))
+                    .cornerRadius(12)
                     
-                    .padding(.vertical, 15)
-                    .frame(width: 180)
-                    .foregroundColor(.white)
-                    .background(Color("Primary"))
+                    Button {
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.up")
+                                .fontWeight(.bold)
+                            Text("Receive")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        }
+                    }
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 24)
+                    .foregroundColor(Color("BrandPrimary"))
+                    .background(Color("BrandSecondary"))
                     .cornerRadius(12)
                     
                     Spacer()
-                    
-                    Button {
-                        
-                    } label: {
-                        Text("Receive")
-                    }
-                    .padding(.vertical, 15)
-                    .frame(width: 180)
-                    .foregroundColor(.black)
-                    .background(Color("Gray2"))
-                    .cornerRadius(12)
 
                 }
             }
             .padding(16)
             .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
             
             VStack{
                 Text("Your Asset")
                     .bold()
-                    .padding(.vertical, 12)
+                    .padding(.vertical, 8)
                 Divider()
                 
                 ScrollView{
@@ -121,14 +156,13 @@ struct WalletView: View {
                 }
                 
                 
-                
-                
-                
-            } .background(.white)
+            } 
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
             
             Spacer()
         }
-        
+        .padding(.horizontal, 8)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         
         .onAppear{

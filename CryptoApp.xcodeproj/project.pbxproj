@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0A1BA82B22A8980098DCB2 /* NFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A1BA72B22A8980098DCB2 /* NFTView.swift */; };
+		4E0A1BAA2B2323390098DCB2 /* NFTDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0A1BA92B2323390098DCB2 /* NFTDataModel.swift */; };
+		4EA2452B2B1F4F61000950ED /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2452A2B1F4F61000950ED /* Transactions.swift */; };
+		4EA2452E2B1F58C1000950ED /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2452D2B1F58C1000950ED /* TransactionDetailView.swift */; };
 		4EB65D242B19630A002A660B /* CryptoBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB65D232B19630A002A660B /* CryptoBalance.swift */; };
 		4EB65D262B19647F002A660B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB65D252B19647F002A660B /* DataService.swift */; };
 		4EE882A92A506EF30078765E /* CryptoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE882A82A506EF30078765E /* CryptoAppApp.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E0A1BA72B22A8980098DCB2 /* NFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTView.swift; sourceTree = "<group>"; };
+		4E0A1BA92B2323390098DCB2 /* NFTDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTDataModel.swift; sourceTree = "<group>"; };
+		4EA2452A2B1F4F61000950ED /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		4EA2452D2B1F58C1000950ED /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		4EB65D232B19630A002A660B /* CryptoBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBalance.swift; sourceTree = "<group>"; };
 		4EB65D252B19647F002A660B /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4EE882A52A506EF30078765E /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +52,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA2452C2B1F5869000950ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EE882AA2A506EF30078765E /* MainView.swift */,
+				4EE882B62A506F040078765E /* WalletView.swift */,
+				4EE882B82A506F270078765E /* HistoryTransactionView.swift */,
+				4EA2452D2B1F58C1000950ED /* TransactionDetailView.swift */,
+				4EE882BA2A506F370078765E /* AccountView.swift */,
+				4E0A1BA72B22A8980098DCB2 /* NFTView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4EE8829C2A506EF30078765E = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				4EE882A82A506EF30078765E /* CryptoAppApp.swift */,
-				4EE882AA2A506EF30078765E /* MainView.swift */,
-				4EE882B62A506F040078765E /* WalletView.swift */,
-				4EE882B82A506F270078765E /* HistoryTransactionView.swift */,
-				4EE882BA2A506F370078765E /* AccountView.swift */,
+				4EA2452C2B1F5869000950ED /* View */,
 				4EB65D232B19630A002A660B /* CryptoBalance.swift */,
+				4EA2452A2B1F4F61000950ED /* Transactions.swift */,
+				4E0A1BA92B2323390098DCB2 /* NFTDataModel.swift */,
 				4EB65D252B19647F002A660B /* DataService.swift */,
 				4EE882AC2A506EF50078765E /* Assets.xcassets */,
 				4EE882AE2A506EF50078765E /* Preview Content */,
@@ -160,7 +180,11 @@
 				4EE882D72A51B48B0078765E /* ComponentView.swift in Sources */,
 				4EE882B92A506F280078765E /* HistoryTransactionView.swift in Sources */,
 				4EE882B72A506F040078765E /* WalletView.swift in Sources */,
+				4E0A1BA82B22A8980098DCB2 /* NFTView.swift in Sources */,
 				4EB65D242B19630A002A660B /* CryptoBalance.swift in Sources */,
+				4EA2452E2B1F58C1000950ED /* TransactionDetailView.swift in Sources */,
+				4E0A1BAA2B2323390098DCB2 /* NFTDataModel.swift in Sources */,
+				4EA2452B2B1F4F61000950ED /* Transactions.swift in Sources */,
 				4EE882BB2A506F370078765E /* AccountView.swift in Sources */,
 				4EB65D262B19647F002A660B /* DataService.swift in Sources */,
 			);

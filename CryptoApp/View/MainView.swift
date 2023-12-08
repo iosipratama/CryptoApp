@@ -14,19 +14,25 @@ struct MainView: View {
         TabView{
             WalletView()
                 .tabItem {
-                    Image(systemName: "bitcoinsign.circle.fill")
+                    Image("wallet")
+                }
+                
+            NFTView()
+                .tabItem {
+                    Image("nft")
                 }
             HistoryTransactionView()
                 .tabItem {
-                    Image(systemName: "arrow.left.arrow.right.circle")
+                    Image("activity")
                 }
+            
+            
             AccountView()
                 .tabItem {
-                    Image(systemName: "person.fill")
+                    Image("profile")
                 }
         }
-
-       
+        
         
     }
 }
