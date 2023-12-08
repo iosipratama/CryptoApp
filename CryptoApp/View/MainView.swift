@@ -17,7 +17,6 @@ struct MainView: View {
                     Image(systemName: "bitcoinsign.circle.fill")
                 }
             HistoryTransactionView()
-                .badge(3)
                 .tabItem {
                     Image(systemName: "arrow.left.arrow.right.circle")
                 }

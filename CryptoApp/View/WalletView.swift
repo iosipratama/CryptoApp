@@ -16,7 +16,7 @@ struct WalletView: View {
     var body: some View {
         
         // Caculate the total account value
-        var totalFiatBalance:Double = balanceList.reduce(0.0) { (result, balance) in
+        let totalFiatBalance:Double = balanceList.reduce(0.0) { (result, balance) in
             return result + balance.fiatBalance
         }
         
