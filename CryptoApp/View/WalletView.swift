@@ -35,7 +35,8 @@ struct WalletView: View {
             // Title
             HStack {
                 Text("Crypto")
-                    .font(.title)
+                    .font(.system(.title, design: .rounded, weight: .regular))
+                    
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 Spacer()
@@ -59,7 +60,7 @@ struct WalletView: View {
                         HStack(alignment:.firstTextBaseline) {
                             
                             Text("$ " + formattedTotalFiatBalance)
-                                .font(.largeTitle)
+                                .font(.system(.largeTitle, design: .rounded))
                                 .bold()
                                 .padding(.bottom, 2)
                                 HStack{
@@ -139,11 +140,11 @@ struct WalletView: View {
                             VStack(alignment:.trailing) {
                                 // Convert double type to string
                                 Text(String(balance.tokenBalance) + " " + balance.tokenTicker)
-                                    .font(.body)
                                     .fontWeight(.medium)
                                 Text("$" + " " + String(balance.fiatBalance))
                                     .foregroundStyle(.gray)
                             }
+                            
                            
                         }
                         .padding(.horizontal, 16)
@@ -152,6 +153,7 @@ struct WalletView: View {
                         
                     }
                     
+                    .font(.system(.body, design: .rounded, weight: .regular))
                     
                 }
                 
@@ -162,6 +164,8 @@ struct WalletView: View {
             
             Spacer()
         }
+        // Change body font to rounded
+        .font(.system(.body, design: .rounded, weight: .regular))
         .padding(.horizontal, 8)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         

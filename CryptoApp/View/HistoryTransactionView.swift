@@ -34,7 +34,7 @@ struct HistoryTransactionView: View {
             // Title
             HStack {
                 Text("Activities")
-                    .font(.title)
+                    .font(.system(.title, design: .rounded, weight: .regular))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
                 Spacer()
@@ -171,6 +171,8 @@ struct HistoryTransactionView: View {
             Spacer()
             
         }
+        .font(.system(.body, design: .rounded, weight: .regular))
+        
         .padding(.horizontal, 8)
         .background(Color(red: 0.96, green: 0.96, blue: 0.96))
         
