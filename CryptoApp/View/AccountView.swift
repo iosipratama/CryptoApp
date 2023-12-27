@@ -72,9 +72,16 @@ struct AccountView: View {
             }, label: {
                 
                 Text("Sign out")
-                
+                    .padding()
+                    .frame(maxWidth:.infinity)
                 
             })
+            
+            Text("App Version: 1.0.0")
+                .font(.caption)
+                .foregroundStyle(.gray)
+            
+            
             
             
             
